@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <windows.h>
-// #include "checkBox.h"
+#include "checkBox.h"
 
 class CheckList
 {
@@ -11,6 +11,7 @@ public:
     short left;
     int index;
     int offset;
+    CheckBox allCheckBoxes[5];
     WORD color;
     WORD background;
     std::string Strings[5];

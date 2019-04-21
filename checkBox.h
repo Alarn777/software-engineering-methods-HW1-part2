@@ -14,6 +14,7 @@ public:
     WORD color;
     WORD background;
     std::string inputText;
+    CheckBox(){};
     CheckBox(short width, short top, short left, std::string inputText, int index);
     void draw(std::string inputText, bool checked, int index);
 
