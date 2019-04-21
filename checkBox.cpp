@@ -26,6 +26,19 @@ void CheckBox::handleKeyboardEvent(KEY_EVENT_RECORD &event)
     }
 }
 
+void CheckBox::handleMouseEvent(MOUSE_EVENT_RECORD &event)
+{
+
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    auto handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    GetConsoleScreenBufferInfo(handle, &info);
+    auto offset = info.dwCursorPosition.X - this->left - 1;
+}
+
+
+
+
+
 void CheckBox::draw(std::string inputText, bool checked, int index)
 {
     COORD coord = coord = {left, top};
