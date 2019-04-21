@@ -82,22 +82,27 @@ void CheckList::handleMouseEvent(MOUSE_EVENT_RECORD &event)
             }
             if(event.dwMousePosition.Y >= 3 &&  event.dwMousePosition.Y <= 5){
                 allCheckBoxes[0].handleKeyboardEvent(ir.Event.KeyEvent);
+                position = 1;
                 draw(position);
             }
             if(event.dwMousePosition.Y >= 6 &&  event.dwMousePosition.Y <= 8){
                allCheckBoxes[1].handleKeyboardEvent(ir.Event.KeyEvent);
+                position = 2;
                 draw(position); 
             }
             if(event.dwMousePosition.Y >= 9 &&  event.dwMousePosition.Y <= 11){
                 allCheckBoxes[2].handleKeyboardEvent(ir.Event.KeyEvent);
+                position = 3;
                 draw(position);
             }
             if(event.dwMousePosition.Y >= 12 &&  event.dwMousePosition.Y <= 14){
                 allCheckBoxes[3].handleKeyboardEvent(ir.Event.KeyEvent);
+                position = 4;
                 draw(position);
             }
             if(event.dwMousePosition.Y >= 15 &&  event.dwMousePosition.Y <= 17){
                 allCheckBoxes[4].handleKeyboardEvent(ir.Event.KeyEvent);
+                position = 5;
                 draw(position);
             }
         }
