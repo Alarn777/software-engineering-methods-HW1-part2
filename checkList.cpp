@@ -69,13 +69,17 @@ void CheckList::handleMouseEvent(MOUSE_EVENT_RECORD &event)
     {
         if( event.dwMousePosition.X >=1 &&  event.dwMousePosition.X <= 4)
         {
-            const int KEYEVENT_KEYUP = 0x02;
+            INPUT_RECORD ir;
+            if(event.dwMousePosition.Y >= 3 &&  event.dwMousePosition.Y <= 17)
+            {
+                const int KEYEVENT_KEYUP = 0x02;
                 keybd_event(VK_SPACE,0,0,0); 
                 keybd_event(VK_SPACE,0,KEYEVENT_KEYUP,0);
                 auto handle = GetStdHandle(STD_INPUT_HANDLE);
-                INPUT_RECORD ir;
+                // INPUT_RECORD ir;
                 DWORD count;
                 ReadConsoleInput(handle, &ir, 1, &count);
+            }
             if(event.dwMousePosition.Y >= 3 &&  event.dwMousePosition.Y <= 5){
                 allCheckBoxes[0].handleKeyboardEvent(ir.Event.KeyEvent);
                 draw(position);
